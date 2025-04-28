@@ -1,0 +1,118 @@
+<!-- services.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - UI Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-bg">
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">UI <span>Portfolio</span></div>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <div class="nav-center">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li class="dropdown">
+          <a href="#">Pages ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hire-btn">Hire Me</button>
+    </div>
+    <div class="nav-icons">
+      <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+      <i class="fa-solid fa-moon" id="themeToggle"></i>
+    </div>
+  </nav>
+
+  <!-- Services Header -->
+  <section class="page-header services-header">
+    <h1>Services</h1>
+    <p><a href="index.html">Home</a> » Services</p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section dark-section">
+    <div class="services-container">
+
+      <div class="service-card">
+        <i class="fas fa-code service-icon"></i>
+        <h3>Web Development</h3>
+        <p>Building responsive and modern websites tailored to your needs.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-mobile-alt service-icon"></i>
+        <h3>App Development</h3>
+        <p>Creating efficient and engaging mobile applications for all platforms.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-paint-brush service-icon"></i>
+        <h3>UI/UX Design</h3>
+        <p>Designing intuitive and beautiful user experiences and interfaces.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-chart-line service-icon"></i>
+        <h3>SEO & Marketing</h3>
+        <p>Boosting your online visibility and driving more business results.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-camera-retro service-icon"></i>
+        <h3>Photography</h3>
+        <p>Capturing stunning visuals to represent your brand's identity.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-headset service-icon"></i>
+        <h3>Customer Support</h3>
+        <p>Ensuring excellent support experience for your clients globally.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <h2 class="footer-logo">UI <span>Portfolio</span></h2>
+      <p><i class="fas fa-phone"></i> +12 345 678 900</p>
+      <p><i class="fas fa-envelope"></i> info@example.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 208 Avenue street, UK - 62617.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear"></span> UI Portfolio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

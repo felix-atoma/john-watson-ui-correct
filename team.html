@@ -1,0 +1,148 @@
+<!-- team.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team - UI Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-bg">
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">UI <span>Portfolio</span></div>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <div class="nav-center">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="dropdown">
+          <a href="#">Pages ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="team.html" class="active">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hire-btn">Hire Me</button>
+    </div>
+    <div class="nav-icons">
+      <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+      <i class="fa-solid fa-moon" id="themeToggle"></i>
+    </div>
+  </nav>
+
+  <!-- Team Header -->
+  <section class="page-header team-header">
+    <h1>Meet Our Amazing Team</h1>
+    <p><a href="index.html">Home</a> » Team</p>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section dark-section">
+    <div class="team-container">
+
+      <div class="team-card">
+        <img src="images/team1.png" alt="Team Member 1" class="team-img">
+        <h3>John Watson</h3>
+        <p>Lead UI/UX Designer</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="images/Kwame Boateng_ Expert Service and Support.png" alt="Team Member 2" class="team-img">
+        <h3>Sarah Johnson</h3>
+        <p>Frontend Developer</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="images/team3.png" alt="Team Member 3" class="team-img">
+        <h3>Michael Lee</h3>
+        <p>Creative Director</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-behance"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="images/team4.png" alt="Team Member 4" class="team-img">
+        <h3>Lisa Brown</h3>
+        <p>Graphic Designer</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="images/team5.png" alt="Team Member 5" class="team-img">
+        <h3>Chris Evans</h3>
+        <p>Full Stack Developer</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="images/team6.png" alt="Team Member 6" class="team-img">
+        <h3>Emma Wilson</h3>
+        <p>Marketing Strategist</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <h2 class="footer-logo">UI <span>Portfolio</span></h2>
+      <p><i class="fas fa-phone"></i> +12 345 678 900</p>
+      <p><i class="fas fa-envelope"></i> info@example.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 208 Avenue street, UK - 62617.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear"></span> UI Portfolio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

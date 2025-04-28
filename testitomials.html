@@ -1,0 +1,118 @@
+<!-- testimonials.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - UI Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-bg">
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">UI <span>Portfolio</span></div>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <div class="nav-center">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="dropdown">
+          <a href="#">Pages ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html" class="active">Testimonials</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hire-btn">Hire Me</button>
+    </div>
+    <div class="nav-icons">
+      <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+      <i class="fa-solid fa-moon" id="themeToggle"></i>
+    </div>
+  </nav>
+
+  <!-- Testimonials Header -->
+  <section class="page-header testimonials-header">
+    <h1>My Clients and Testimonials</h1>
+    <p><a href="index.html">Home</a> » Testimonials</p>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section dark-section">
+    <div class="testimonials-container">
+
+      <div class="testimonial-card">
+        <img src="images/t1.png" alt="Client 1" class="testimonial-img">
+        <p>"Amazing work! The designs are clean, sharp, and delivered on time. Highly recommend!"</p>
+        <h3>- Emily Stone</h3>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="images/t2.png" alt="Client 2" class="testimonial-img">
+        <p>"Fantastic communication and creativity throughout the entire project."</p>
+        <h3>- Michael Reed</h3>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="images/t3.png" alt="Client 3" class="testimonial-img">
+        <p>"John brought our website to life exactly the way we imagined it. Thank you so much!"</p>
+        <h3>- Sarah Lee</h3>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="images/t4.png" alt="Client 4" class="testimonial-img">
+        <p>"Truly a talented and reliable designer. Will definitely work together again."</p>
+        <h3>- David Brown</h3>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="images/t5.png" alt="Client 5" class="testimonial-img">
+        <p>"Beyond impressed with the results. Outstanding creativity and attention to detail."</p>
+        <h3>- Olivia Johnson</h3>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="images/t6.png" alt="Client 6" class="testimonial-img">
+        <p>"Great experience from start to finish! Very professional and easy to work with."</p>
+        <h3>- Ethan Williams</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <h2 class="footer-logo">UI <span>Portfolio</span></h2>
+      <p><i class="fas fa-phone"></i> +12 345 678 900</p>
+      <p><i class="fas fa-envelope"></i> info@example.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 208 Avenue street, UK - 62617.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear"></span> UI Portfolio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

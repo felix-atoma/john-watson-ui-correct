@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - UI Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-bg">
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">UI <span>Portfolio</span></div>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <div class="nav-center">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="dropdown">
+          <a href="#">Pages ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="hire-btn">Hire Me</button>
+    </div>
+
+    <div class="nav-icons">
+      <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+      <i class="fa-solid fa-moon" id="themeToggle"></i>
+    </div>
+  </nav>
+
+  <!-- Contact Header -->
+  <section class="page-header contact-header">
+    <h1>Contact Us</h1>
+    <p><a href="index.html">Home</a> » Contact</p>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-section dark-section">
+    <div class="contact-container">
+      <div class="contact-left">
+        <h2>Want to get in touch?</h2>
+        <p>Feel free to reach out by filling the form below.</p>
+
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-row">
+            <div class="form-group half-width">
+              <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group half-width">
+              <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="phone" placeholder="Your Phone Number" required>
+          </div>
+
+          <div class="form-group">
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn hire">Submit Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Map Section -->
+<section class="map-section full-width-map">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15883.878327717188!2d-0.22737521842946902!3d5.5741216329870075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf853e5acb9dcb%3A0x1b5b776e45b0d71c!2sAccra%20New%20Town%2C%20Accra%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1714211348391!5m2!1sen!2sgh" 
+    width="100%" 
+    height="500" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <h2 class="footer-logo">UI <span>Felixio</span></h2>
+      <p><i class="fas fa-phone"></i> +233 244173068</p>
+      <p><i class="fas fa-envelope"></i> info@example.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 208 Avenue street, UK - 62617.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="currentYear"></span> UI Portfolio. All Rights Reserved.</p>
+    </div>
+
+    <button id="scrollToTop" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
