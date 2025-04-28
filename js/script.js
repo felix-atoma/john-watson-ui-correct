@@ -1,6 +1,6 @@
 // Navbar Elements
 const themeToggle = document.getElementById("themeToggle");
-const hamburger = document.getElementById("hamburger");
+const hamburger = document.getElementById("hamburger"); // corrected here
 const navLinks = document.getElementById("navLinks");
 const dropdown = document.querySelector(".dropdown");
 const searchBox = document.getElementById("searchBox");
@@ -9,47 +9,55 @@ const searchIcon = document.getElementById("searchIcon");
 // Search Toggle
 let searchOpen = false;
 
-searchIcon.addEventListener("click", () => {
-  searchBox.classList.toggle("active");
-  searchOpen = !searchOpen;
+if (searchIcon && searchBox) {
+  searchIcon.addEventListener("click", () => {
+    searchBox.classList.toggle("active");
+    searchOpen = !searchOpen;
 
-  if (searchOpen) {
-    searchIcon.classList.remove("fa-magnifying-glass");
-    searchIcon.classList.add("fa-xmark");
-  } else {
-    searchIcon.classList.remove("fa-xmark");
-    searchIcon.classList.add("fa-magnifying-glass");
-  }
-});
+    if (searchOpen) {
+      searchIcon.classList.remove("fa-magnifying-glass");
+      searchIcon.classList.add("fa-xmark");
+    } else {
+      searchIcon.classList.remove("fa-xmark");
+      searchIcon.classList.add("fa-magnifying-glass");
+    }
+  });
+}
 
 // Theme Toggle
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light");
 
-  if (document.body.classList.contains("light")) {
-    themeToggle.classList.remove("fa-moon");
-    themeToggle.classList.add("fa-sun");
-  } else {
-    themeToggle.classList.remove("fa-sun");
-    themeToggle.classList.add("fa-moon");
-  }
-});
+    if (document.body.classList.contains("light")) {
+      themeToggle.classList.remove("fa-moon");
+      themeToggle.classList.add("fa-sun");
+    } else {
+      themeToggle.classList.remove("fa-sun");
+      themeToggle.classList.add("fa-moon");
+    }
+  });
+}
 
 // Hamburger Toggle
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  hamburger.classList.toggle("active");
-});
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+}
 
-// Dropdown Toggle for Mobile
-dropdown.addEventListener("click", (e) => {
-  if (window.innerWidth <= 768) {
-    e.preventDefault();
-    dropdown.classList.toggle("open");
-  }
-});
+// Dropdown Toggle for Mobile (optional)
+if (dropdown) {
+  dropdown.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      dropdown.classList.toggle("open");
+    }
+  });
+}
 
-// Typing Animation
+// Typing Animation (optional)
 const typingElement = document.getElementById("typing");
 const texts = ["FullStack Developer", "Translator", "Tech Enthusiast"];
 let textIndex = 0;
@@ -58,35 +66,39 @@ let isDeleting = false;
 let typingSpeed = 100;
 
 function type() {
-  const currentText = texts[textIndex];
-  typingElement.textContent = currentText.substring(0, charIndex);
+  if (typingElement) {
+    const currentText = texts[textIndex];
+    typingElement.textContent = currentText.substring(0, charIndex);
 
-  if (!isDeleting && charIndex < currentText.length) {
-    charIndex++;
-    typingSpeed = 100;
-  } else if (isDeleting && charIndex > 0) {
-    charIndex--;
-    typingSpeed = 50;
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) {
-      textIndex = (textIndex + 1) % texts.length;
-      typingSpeed = 1000;
+    if (!isDeleting && charIndex < currentText.length) {
+      charIndex++;
+      typingSpeed = 100;
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      typingSpeed = 50;
     } else {
-      typingSpeed = 500;
+      isDeleting = !isDeleting;
+      if (!isDeleting) {
+        textIndex = (textIndex + 1) % texts.length;
+        typingSpeed = 1000;
+      } else {
+        typingSpeed = 500;
+      }
     }
-  }
 
-  setTimeout(type, typingSpeed);
+    setTimeout(type, typingSpeed);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", type);
 
-// Stats Counter Animation
+// Stats Counter Animation (optional)
 let hasCounted = false;
 
 function animateCounter(id, target, duration) {
   const counter = document.getElementById(id);
+  if (!counter) return;
+
   let start = 0;
   const startTime = performance.now();
 
@@ -108,6 +120,7 @@ function animateCounter(id, target, duration) {
 window.addEventListener('scroll', () => {
   const statsSection = document.getElementById('stats');
   if (!statsSection) return;
+
   const sectionTop = statsSection.getBoundingClientRect().top;
   const triggerPoint = window.innerHeight * 0.8;
 
@@ -120,7 +133,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Fade-up Animation on Scroll
+// Fade-up Animation for success cards
 const faders = document.querySelectorAll('.success-card');
 
 function appearOnScroll(entries, observer) {
@@ -132,33 +145,41 @@ function appearOnScroll(entries, observer) {
   });
 }
 
-const options = {
+const observerOptions = {
   threshold: 0.3
 };
 
-const observer = new IntersectionObserver(appearOnScroll, options);
+const observer = new IntersectionObserver(appearOnScroll, observerOptions);
 
 faders.forEach(card => {
   card.classList.add('fade-up');
   observer.observe(card);
 });
-// Update Footer Year Dynamically
-document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-// Scroll to Top Functionality
-const scrollToTopBtn = document.getElementById("scrollToTop");
+// Footer Year
+const yearSpan = document.getElementById("currentYear");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+
+// Scroll to Top
+const scrollToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollToTopBtn.style.display = "flex";
-  } else {
-    scrollToTopBtn.style.display = "none";
+  if (scrollToTopBtn) {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.style.display = "flex";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
   }
 });
 
-scrollToTopBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+if (scrollToTopBtn) {
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
-});
+}
