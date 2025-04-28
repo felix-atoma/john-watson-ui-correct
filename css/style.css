@@ -1502,4 +1502,48 @@ img {
       display: none; /* optionally hide the "Hire Me" button on small screens */
     }
   }
-  
+  /* Base Nav Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hamburger initially hidden */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-center {
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}

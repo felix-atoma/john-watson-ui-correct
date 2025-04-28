@@ -1,6 +1,6 @@
 // Navbar Elements
 const themeToggle = document.getElementById("themeToggle");
-const hamburger = document.getElementById("hamburger"); // corrected here
+const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 const dropdown = document.querySelector(".dropdown");
 const searchBox = document.getElementById("searchBox");
@@ -8,7 +8,6 @@ const searchIcon = document.getElementById("searchIcon");
 
 // Search Toggle
 let searchOpen = false;
-
 if (searchIcon && searchBox) {
   searchIcon.addEventListener("click", () => {
     searchBox.classList.toggle("active");
@@ -39,13 +38,31 @@ if (themeToggle) {
   });
 }
 
-// Hamburger Toggle
+// Hamburger Toggle (with sliding animation)
 if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     hamburger.classList.toggle('active');
+    if (navLinks.classList.contains('active')) {
+      navLinks.style.maxHeight = navLinks.scrollHeight + "px";
+    } else {
+      navLinks.style.maxHeight = "0";
+    }
   });
 }
+
+// Close menu after clicking a link (for small screens)
+const navLinksList = document.querySelectorAll("#navLinks a");
+
+navLinksList.forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+      navLinks.style.maxHeight = "0";
+    }
+  });
+});
 
 // Dropdown Toggle for Mobile (optional)
 if (dropdown) {
@@ -85,7 +102,6 @@ function type() {
         typingSpeed = 500;
       }
     }
-
     setTimeout(type, typingSpeed);
   }
 }
