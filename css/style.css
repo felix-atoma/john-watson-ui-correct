@@ -226,7 +226,7 @@
   /* Hero Section */
   .hero {
     padding: 6rem 2rem;
-    background-color: #075985; /* sky-800 */
+    background-color: teal; /* sky-800 */
     color: white;
     min-height: calc(100vh - 80px);
     display: flex;
