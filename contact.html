@@ -48,35 +48,40 @@
   </section>
 
   <!-- Contact Form -->
-  <section class="contact-section dark-section">
-    <div class="contact-container">
-      <div class="contact-left">
-        <h2>Want to get in touch?</h2>
-        <p>Feel free to reach out by filling the form below.</p>
+<section class="contact-section dark-section">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2>Want to get in touch?</h2>
+      <p>Feel free to reach out by filling the form below.</p>
 
-        <form class="contact-form">
-          <div class="form-row">
-            <div class="form-group half-width">
-              <input type="text" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group half-width">
-              <input type="email" name="email" placeholder="Your Email" required>
-            </div>
+      <form class="contact-form">
+        <div class="form-row">
+          <div class="form-group half-width">
+            <input type="text" name="name" placeholder="Your Name" required>
           </div>
-
-          <div class="form-group">
-            <input type="text" name="phone" placeholder="Your Phone Number" required>
+          <div class="form-group half-width">
+            <input type="email" name="email" placeholder="Your Email" required>
           </div>
+        </div>
 
-          <div class="form-group">
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          </div>
+        <div class="form-group">
+          <input type="text" name="phone" placeholder="Your Phone Number" required>
+        </div>
 
-          <button type="submit" class="btn hire">Submit Message</button>
-        </form>
-      </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+
+        <!-- Spinner -->
+        <div id="spinner" style="display:none; text-align:center; margin: 10px 0;">
+          <i class="fas fa-spinner fa-spin" style="font-size: 24px; color: #F7931E;"></i>
+        </div>
+
+        <button type="submit" class="btn hire">Submit Message</button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Map Section -->
   <section class="map-section full-width-map">
@@ -111,46 +116,54 @@
     <button id="scrollToTop" title="Go to top"><i class="fas fa-arrow-up"></i></button>
   </footer>
 
-  <!-- JS Scripts -->
-  <script src="js/script.js"></script>
-  <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  <!-- Contact Form Script -->
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // Handle contact form submission
-    const form = document.querySelector('.contact-form');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        phone: formData.get('phone'),
-        message: formData.get('message'),
-      };
+  const form = document.querySelector('.contact-form');
+  const spinner = document.getElementById('spinner');
+  const submitButton = form.querySelector('button[type="submit"]');
 
-      try {
-        const response = await fetch('https://contact-form-backend-updated.onrender.com/api/messages', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    spinner.style.display = 'block';
+    submitButton.disabled = true;
 
-        const result = await response.json();
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message'),
+    };
 
-        if (response.ok) {
-          alert(result.message);
-          form.reset();
-        } else {
-          alert("Something went wrong: " + result.error || "Please try again later.");
-        }
+    try {
+      const response = await fetch('https://contact-form-backend-updated.onrender.com/api/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
 
-      } catch (error) {
-        alert("Failed to send message. Please check your internet connection.");
-        console.error(error);
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(result.message);
+        form.reset();
+      } else {
+        alert("Something went wrong: " + (result.error || "Please try again later."));
       }
-    });
-  </script>
+
+    } catch (error) {
+      alert("Failed to send message. Please check your internet connection.");
+      console.error(error);
+    } finally {
+      spinner.style.display = 'none';
+      submitButton.disabled = false;
+    }
+  });
+</script>
+
 </body>
 </html>
